@@ -1,3 +1,4 @@
+// Mục tiêu: Bao phủ mọi luồng thực thi - Resolve #2
 package lab1;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
