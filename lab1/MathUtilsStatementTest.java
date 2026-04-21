@@ -1,3 +1,4 @@
+// Mục tiêu: Đạt 100% Statement Coverage - Resolve #1
 package lab1;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
