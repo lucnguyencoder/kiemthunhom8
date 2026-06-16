@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.status {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+.match-container {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.score-board {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 30px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 10px;
+}
+
+.team {
+    text-align: center;
+    flex: 1;
+}
+
+.team-name {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.score {
+    font-size: 4em;
+    font-weight: bold;
+    color: #667eea;
+    line-height: 1;
+}
+
+.possession {
+    font-size: 1em;
+    color: #666;
+    margin-top: 10px;
+}
+
+.match-info {
+    text-align: center;
+    flex: 1;
+    padding: 0 30px;
+}
+
+.minute {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #333;
+}
+
+.status-badge {
+    display: inline-block;
+    background: #ff4757;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    margin-top: 10px;
+    font-weight: bold;
+    animation: pulse 2s infinite;
+}
+
+.status-badge.finished {
+    background: #2ed573;
+    animation: none;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+.events-container {
+    margin-top: 30px;
+}
+
+.events-container h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.events-list {
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 15px;
+    background: #f9f9f9;
+}
+
+.event {
+    padding: 12px;
+    margin-bottom: 10px;
+    border-left: 4px solid #667eea;
+    background: white;
+    border-radius: 5px;
+    font-size: 0.95em;
+}
+
+.event.goal {
+    border-left-color: #2ed573;
+    background: #f0fff4;
+}
+
+.event.yellow-card {
+    border-left-color: #ffa502;
+    background: #fffbf0;
+}
+
+.event.red-card {
+    border-left-color: #ff4757;
+    background: #fff5f5;
+}
+
+.event.possession {
+    border-left-color: #0984e3;
+    background: #f0f7ff;
+}
+
+.event-time {
+    font-weight: bold;
+    color: #667eea;
+    margin-right: 8px;
+}
+
+.event-type {
+    display: inline-block;
+    background: #667eea;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 0.85em;
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+.event.goal .event-type {
+    background: #2ed573;
+}
+
+.event.yellow-card .event-type {
+    background: #ffa502;
+}
+
+.event.red-card .event-type {
+    background: #ff4757;
+}
+
+.event-description {
+    color: #666;
+}
+
+.placeholder {
+    text-align: center;
+    color: #999;
+    padding: 20px;
+    font-style: italic;
+}
+
+/* Scrollbar styling */
+.events-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.events-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.events-list::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 10px;
+}
+
+.events-list::-webkit-scrollbar-thumb:hover {
+    background: #764ba2;
+}
+
+@media (max-width: 600px) {
+    .score-board {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .match-info {
+        padding: 15px 0;
+    }
+
+    .header h1 {
+        font-size: 1.8em;
+    }
+
+    .score {
+        font-size: 2.5em;
+    }
+
+    .minute {
+        font-size: 1.8em;
+    }
+}

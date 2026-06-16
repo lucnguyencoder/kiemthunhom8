@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Live Match</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏟️ Football Live Match</h1>
+            <p id="status" class="status">Connecting...</p>
+        </div>
+
+        <div class="match-container">
+            <div class="score-board">
+                <div class="team home-team">
+                    <div class="team-name" id="homeName">Arsenal</div>
+                    <div class="score" id="homeScore">0</div>
+                    <div class="possession" id="homePossession">50%</div>
+                </div>
+
+                <div class="match-info">
+                    <div class="minute" id="minute">0'</div>
+                    <div class="status-badge" id="statusBadge">LIVE</div>
+                </div>
+
+                <div class="team away-team">
+                    <div class="team-name" id="awayName">Chelsea</div>
+                    <div class="score" id="awayScore">0</div>
+                    <div class="possession" id="awayPossession">50%</div>
+                </div>
+            </div>
+
+            <div class="events-container">
+                <h2>Latest Events</h2>
+                <div id="eventsList" class="events-list">
+                    <p class="placeholder">Waiting for match events...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
