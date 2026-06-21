@@ -9,36 +9,141 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>🏟️ Football Live Match</h1>
-            <p id="status" class="status">Connecting...</p>
+            <h1>🏟️ Football Live Match Performance Testing</h1>
         </div>
 
-        <div class="match-container">
-            <div class="score-board">
-                <div class="team home-team">
-                    <div class="team-name" id="homeName">Arsenal</div>
-                    <div class="score" id="homeScore">0</div>
-                    <div class="possession" id="homePossession">50%</div>
+        <!-- Match Selection Panel -->
+        <div id="selectionPanel" class="selection-panel">
+            <h2>Select Match</h2>
+            
+            <!-- Tab Navigation -->
+            <div class="tab-buttons">
+                <button class="tab-btn active" data-tab="custom">Custom Teams</button>
+                <button class="tab-btn" data-tab="live">Live Matches</button>
+            </div>
+            
+            <!-- Custom Teams Tab -->
+            <div id="custom-tab" class="tab-content active">
+                <div class="team-selection">
+                    <div class="team-picker">
+                        <label>Home Team:</label>
+                        <select id="homeTeam"></select>
+                    </div>
+                    <div class="vs">VS</div>
+                    <div class="team-picker">
+                        <label>Away Team:</label>
+                        <select id="awayTeam"></select>
+                    </div>
+                </div>
+                <button id="startBtn" class="start-btn">Start Match & Test</button>
+            </div>
+            
+            <!-- Live Matches Tab -->
+            <div id="live-tab" class="tab-content">
+                <div id="matchesList" class="matches-list">
+                    <p class="placeholder">Loading live matches...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Match Display Panel -->
+        <div id="matchPanel" class="match-panel" style="display: none;">
+            <div class="header-sub">
+                <p id="status" class="status">Connecting...</p>
+            </div>
+
+            <div class="match-container">
+                <div class="score-board">
+                    <div class="team home-team">
+                        <div class="team-name" id="homeName">Arsenal</div>
+                        <div class="score" id="homeScore">0</div>
+                        <div class="possession" id="homePossession">50%</div>
+                    </div>
+
+                    <div class="match-info">
+                        <div class="minute" id="minute">0'</div>
+                        <div class="status-badge" id="statusBadge">LIVE</div>
+                    </div>
+
+                    <div class="team away-team">
+                        <div class="team-name" id="awayName">Chelsea</div>
+                        <div class="score" id="awayScore">0</div>
+                        <div class="possession" id="awayPossession">50%</div>
+                    </div>
                 </div>
 
-                <div class="match-info">
-                    <div class="minute" id="minute">0'</div>
-                    <div class="status-badge" id="statusBadge">LIVE</div>
+                <div class="events-container">
+                    <h2>Latest Events</h2>
+                    <div id="eventsList" class="events-list">
+                        <p class="placeholder">Waiting for match events...</p>
+                    </div>
                 </div>
+            </div>
+        </div>
 
-                <div class="team away-team">
-                    <div class="team-name" id="awayName">Chelsea</div>
-                    <div class="score" id="awayScore">0</div>
-                    <div class="possession" id="awayPossession">50%</div>
+        <!-- Performance Results Panel -->
+        <div id="resultsPanel" class="results-panel" style="display: none;">
+            <h2>📊 Performance Test Results</h2>
+            <div id="resultsSummary" class="results-summary">
+                <div class="result-item">
+                    <span class="label">Test Duration:</span>
+                    <span id="duration" class="value">-</span>
+                </div>
+                <div class="result-item">
+                    <span class="label">Clients Tested:</span>
+                    <span id="clientsCount" class="value">-</span>
+                </div>
+                <div class="result-item">
+                    <span class="label">Total Messages:</span>
+                    <span id="messagesCount" class="value">-</span>
+                </div>
+                <div class="result-item">
+                    <span class="label">Errors:</span>
+                    <span id="errorsCount" class="value">-</span>
                 </div>
             </div>
 
-            <div class="events-container">
-                <h2>Latest Events</h2>
-                <div id="eventsList" class="events-list">
-                    <p class="placeholder">Waiting for match events...</p>
-                </div>
+            <div id="latencyMetrics" class="latency-metrics">
+                <h3>Latency Metrics (milliseconds)</h3>
+                <table>
+                    <tr>
+                        <td>Min</td>
+                        <td id="latMin">-</td>
+                    </tr>
+                    <tr>
+                        <td>Max</td>
+                        <td id="latMax">-</td>
+                    </tr>
+                    <tr>
+                        <td>Mean</td>
+                        <td id="latMean">-</td>
+                    </tr>
+                    <tr>
+                        <td>Median</td>
+                        <td id="latMedian">-</td>
+                    </tr>
+                    <tr>
+                        <td>Std Dev</td>
+                        <td id="latStdev">-</td>
+                    </tr>
+                    <tr>
+                        <td>P95</td>
+                        <td id="latP95">-</td>
+                    </tr>
+                    <tr>
+                        <td>P99</td>
+                        <td id="latP99">-</td>
+                    </tr>
+                </table>
             </div>
+
+            <button id="backBtn" class="back-btn">Back to Selection</button>
+        </div>
+
+        <!-- Loading Indicator -->
+        <div id="loadingIndicator" class="loading-indicator" style="display: none;">
+            <div class="spinner"></div>
+            <p>Running performance test with <span id="loadingClientCount">1000</span> clients...</p>
         </div>
     </div>
 
